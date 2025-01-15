@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# TypeScript
+dist/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Environment Files
+.env
+
+# Prisma
+prisma/.env
+
+# Vscode settings
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Production build
+build/
+
+# Coverage directory (e.g. when using Jest)
+coverage/
+
+# Temporary files created by the IDE or build tools
+*.swp
