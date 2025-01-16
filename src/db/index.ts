@@ -11,5 +11,6 @@ const connectDatabase = async () => {
         process.exit(1);
     }
 }
+export { prisma };
 
 export default connectDatabase;
