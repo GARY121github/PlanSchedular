@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -19,11 +13,29 @@ enum Priority {
   LOW
 }
 
+enum Status {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
 model Plan {
-  id         String   @id @default(cuid())
+  id          String    @id @default(cuid())
   name        String
   description String?
   priority    Priority
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  status      Status
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  categoryId  String? // Foreign key to Category
+  category    Category? @relation(fields: [categoryId], references: [id]) // Relation field to Category
+}
+
+model Category {
+  id        String   @id @default(cuid()) // Primary key for Category
+  name      String
+  description String?
+  plans     Plan[] // One Category can have multiple Plans
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

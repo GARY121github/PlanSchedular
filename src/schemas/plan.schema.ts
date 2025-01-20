@@ -1,6 +1,8 @@
 import zod from 'zod';
 
-const priorityEnum = zod.enum(["LOW", "MEDIUM", "HIGH"]);
+export const priorityEnum = zod.enum(["LOW", "MEDIUM", "HIGH"]);
+
+export const statusEnum = zod.enum(["TODO", "IN_PROGRESS", "DONE"]);
 
 const planSchema = zod.object({
     name : zod
@@ -12,9 +14,11 @@ const planSchema = zod.object({
     .max(500 , "Description should be atmost 500 characters long")
     .optional(),
     priority : priorityEnum,
+    status : statusEnum.optional(),
 });
 
 export type Plan = zod.infer<typeof planSchema>;
+export type Status = zod.infer<typeof statusEnum>;
 export type Proprity = zod.infer<typeof priorityEnum>;
 
 export default planSchema;
