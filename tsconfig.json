@@ -10,6 +10,11 @@
   },
   "exclude": [
     "node_modules",
-    "README.md"
+    "README.md",
+    ".gitignore",
+    "tsconfig.json",
+    "package.json",
+    "package-lock.json",
+    ".dockerignore",
   ]
 }

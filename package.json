@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node --env-file-if-exists=.env src/index.ts",  
     "build": "tsc",                  
-    "start": "tsc && node --env-file-if-exists=.env dist/index.js",  
+    "start": "tsc && node --env-file=.env dist/index.js",  
     "migrate": "prisma migrate dev", 
     "migrate:prod": "prisma migrate deploy", 
     "generate": "prisma generate",   

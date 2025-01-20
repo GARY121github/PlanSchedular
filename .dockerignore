@@ -1,0 +1,21 @@
+# Ignore node_modules to avoid copying them into the container
+node_modules
+npm-debug.log
+
+# Ignore local environment files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore build or temporary files
+/dist
+/build
