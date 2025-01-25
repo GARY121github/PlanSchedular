@@ -9,7 +9,7 @@ router.route('/')
 
 router.route('/:id')
     .get(planController.getPlan)
-    .put(planController.updatePlan)
+    .patch(planController.updatePlan)
     .delete(planController.deletePlan)
 
 export default router;
